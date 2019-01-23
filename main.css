@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 0 35px;
+}
+
+.header-section {
+    width: 100%;
+    text-align: center;
+}
+
+.header-section h1 {
+    font-size: 75px;
+    margin: 20px 0;
+}
+
+.header-section h2 {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.contact-section {
+    width: 100%;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-size: 55px;
+}
+
+.contact-section img {
+    width: 50%;
+}
+
+.contact-section a {
+    text-decoration: none;
+    margin: 30px 10px;
+    font-size: 55px;
+    display: block;
+}
+
+.education-section h3,
+.employment-section h3 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.education-section ul li,
+.employment-section ul li {
+    list-style: none;
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+.employment-section {
+    margin: 20px 0;
+}
+
+.employment-section h3 {
+    font-size: 60px;
+}

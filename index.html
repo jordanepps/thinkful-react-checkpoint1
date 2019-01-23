@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>React Hello World</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="application-root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin>
+    </script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin>
+    </script>
+    <script type="text/babel">
+        // Our code will go here
+        
+        function Employment(){
+            const employmentData = [
+                {
+                    id: 1,
+                    jobTitle: 'Developer',
+                    location: 'Bigger City',
+                    dates: 'Job Feb 2017-Current',
+                    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at.' 
+                 },
+                 {
+                    id: 2,
+                    jobTitle: 'Developer',
+                    location: 'Big City Job',
+                    dates: ' Aug 2015-Feb 2017',
+                    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at.'   
+                 }
+            ]
+            const employmentHistory = employmentData.map(jobData => 
+                 <li key={jobData.id}>
+                    <p><strong>{jobData.jobTitle}</strong> - {jobData.location} - {jobData.dates}</p>
+                    <p>{jobData.about}</p>
+                 </li>
+            )
+            return(
+                <section className="employment-section">
+                    <h3>Employment History</h3>
+                    <ul>
+                        {employmentHistory}
+                    </ul>
+                </section>
+            )
+        }
+        function Education(){
+            const educationData = [
+                {school: 'Big City High School - 2010', id: 1}, 
+                {school: 'University of South Carolina - 2014', id: 2}
+            ];
+
+            const educationHistory = educationData.map(schoolData => 
+                <li key={schoolData.id}>{schoolData.school}</li>
+            )
+            return(
+                <section className="education-section">
+                    <h3>Education</h3>
+                    <ul>
+                        {educationHistory}
+                    </ul>
+                </section>
+            )
+        }
+        function Address(){
+            const contactData = [
+                {
+                    id: 1,
+                    href:'mailto:sallystudent@thinkful.com',
+                    data:'sallystudent@thinkful.com'
+                },
+                {
+                    id: 2,
+                    href: 'tel:347-555-1234',
+                    data: '(347) 555-1234'
+                    }
+            ]
+
+            const contactInfo = contactData.map(contact => 
+                    <a key={contact.id} href={contact.href}>{contact.data}</a>
+            )
+            return(
+                <address>
+                    {contactInfo}
+                </address>
+            )
+        }
+        function Contact(props){
+            return(
+                <section className="contact-section">
+                    <h3>Contact</h3>
+                    <img src="https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg"/>
+                    <Address/>
+                </section>
+            )
+        }
+        function Header(props){
+            return(
+                <header className="header-section">
+                    <h1>{props.studentName}</h1>
+                    <h2>Resume</h2>
+                </header>
+            )
+        }
+        function App(props) {
+            return(
+                <div className="container">
+                    <Header studentName={props.studentName}/>
+                    <Contact/>
+                    <Education/>
+                    <Employment/>
+                </div>
+            )
+        }
+
+ReactDOM.render(<App studentName="Sally Student"/>, document.querySelector('#application-root'));
+    </script>
+</body>
+
+</html>
